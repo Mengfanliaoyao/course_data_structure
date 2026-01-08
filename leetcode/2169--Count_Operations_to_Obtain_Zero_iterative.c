@@ -2,6 +2,18 @@
 #include<stdio.h>
 
 
+int countOperationsRecursive(int num1, int num2) {
+  // make sure num1 always > num2
+  if(num1<num2) return countOperationsRecursive(num2, num1);
+  
+  if(!num1||!num2) return 0;
+  
+  if(!(num1%num2)) return num1/num2;
+  
+  return countOperationsRecursive(num2, num1-num2) + 1;
+}
+
+
 int countOperations(int num1, int num2) {
   
   int ans = 0;
@@ -39,6 +51,8 @@ int countOperations(int num1, int num2) {
   }
   return ans;
 }
+
+
 
 int main(void)
 {

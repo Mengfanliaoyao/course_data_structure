@@ -3,12 +3,14 @@
 
 #include<stdbool.h>
 
-bool isPalindrome(int x) {
+bool isPalindrome(int x) 
+{
   if(x < 0) return false;
   
   char s[10] = {0};
   int digit_num = 0;
   int temp = x;
+  // count how many digits x has and break s into digits
   while(temp)
   {
     s[digit_num++] = temp%10;
@@ -17,9 +19,9 @@ bool isPalindrome(int x) {
   
   int l = 0;
   int r = digit_num - 1;
-  
+  // iterate for all digits x has
   while(l<r){
-    if(s[l]!=s[r])
+    if(s[l]!=s[r]) // from top and buttom check if x is symmetric
       return false;
     
     l++;

@@ -9,12 +9,12 @@ bool isOneBitCharacter(int* bits, int bitsSize) {
   {
     if(flag)
       flag = false;
-    else if(bits[i])
+    else if(bits[i]) // if reach any 1, since 2 bits characters all begin with 1, ignore the next bit
       flag = true;
-    else if (i==bitsSize - 1)
+    else if (i==bitsSize - 1) // last bit is one bit character
       return true;
   }
-  return false;
+  return false; // last bit been ignored, is 2 bits character
 }
 
 

@@ -33,9 +33,11 @@ int countUnguarded(int m, int n, int** guards, int guardsSize, int* guardsColSiz
     q[i] = coord;
     map[coord] = 1;
   }
-  
-//  for(int i = 0; i < map_size; i++)
-//    printf("%2d%c", (int)map[i], !((i+1)%(n+2))?'\n':' ');
+
+#if DEBUG
+  for(int i = 0; i < map_size; i++)
+    printf("%2d%c", (int)map[i], !((i+1)%(n+2))?'\n':' ');
+#endif
   
   int ans = m * n - wallsSize - guardsSize;
   for(int i = 0; i < guardsSize; i++) // iterate all guard
@@ -56,9 +58,12 @@ int countUnguarded(int m, int n, int** guards, int guardsSize, int* guardsColSiz
       while((map[crd]!=1)&&(map[crd]!=-1));
     }
   }
-  
-//  for(int i = 0; i < map_size; i++)
-//    printf("%2d%c", (int)map[i], !((i+1)%(n+2))?'\n':' ');
+
+#if DEBUG
+  printf("========================\n");
+  for(int i = 0; i < map_size; i++)
+    printf("%2d%c", (int)map[i], !((i+1)%(n+2))?'\n':' ');
+#endif
   
   return ans;
 }

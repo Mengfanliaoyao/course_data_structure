@@ -10,6 +10,7 @@ struct ListNode {
 
 struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2)
 {
+  // deal with 2 list at the same time, first find which list begin with smaller elements and updates them
   struct ListNode* head = list1?(list2?((list1->val<list2->val)?list1:list2):list1):list2;
   struct ListNode* li1 = (list1&&head==list1)?list1->next:list1;
   struct ListNode* li2 = (list2&&head==list2)?list2->next:list2;
@@ -25,6 +26,7 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2)
     li2 = flag?li2:li2->next;
     now = now->next;
   }
+  // if one list end first, next append it with other list
   if(!li1&&now)
     now->next = li2;
   else if(!li2&&now)

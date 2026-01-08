@@ -1,4 +1,8 @@
-int totalMoney(int n) {
+
+// total money = whole weeks + imconplete weekdays
+// as week incresed, the money of that whole week need to puls its week count * 7
+int totalMoney(int n)
+{
   const static int whole_week_base = 1 + 2 + 3 + 4 + 5 + 6 + 7;
   int total_week = n/7;
   int total_week_increment = 0;

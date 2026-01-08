@@ -18,7 +18,7 @@ int romanToInt(char* s) {
           char next = *(s+i+1);
           if(next=='V'||next=='X')
           {
-            ans+=(next=='V')?4:9;
+            ans+=(next=='V')?4:9; // if IV or IX, means 4 and 9 but not 1+5 or 1+10
             i++; // pass next digit
             break;
           }
@@ -35,7 +35,7 @@ int romanToInt(char* s) {
           char next = *(s+i+1);
           if(next=='L'||next=='C')
           {
-            ans+=(next=='L')?40:90;
+            ans+=(next=='L')?40:90; // if XL or XC, means 40 and 90 but not 10+50 or 10+100
             i++; // pass next digit
             break;
           }
@@ -52,7 +52,7 @@ int romanToInt(char* s) {
           char next = *(s+i+1);
           if(next=='D'||next=='M')
           {
-            ans+=(next=='D')?400:900;
+            ans+=(next=='D')?400:900; // if CD or CM, means 400 and 900 but not 100+500 or 100+1000
             i++; // pass next digit
             break;
           }

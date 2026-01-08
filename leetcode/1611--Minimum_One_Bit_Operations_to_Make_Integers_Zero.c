@@ -5,7 +5,10 @@
 
 #define BIT(i) (0x1u<<(i))
 
-int minimumOneBitOperations(int n) {
+// by operation of 0 to 4 bits operations, we could find that operations is recursive
+// by the same idea of inclusion-exclusion principle, find a particular number could by many times of add and minus repeatly
+int minimumOneBitOperations(int n)
+{
   int ans = 0;
   signed char msb = -1;
   bool negation = false;

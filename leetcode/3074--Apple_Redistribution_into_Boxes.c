@@ -61,11 +61,12 @@ void swap_i(void* a, void* b)
 }
 
 int minimumBoxes(int* apple, int appleSize, int* capacity, int capacitySize) {
+  // count all apples
   int apple_amount = 0;
   for(int i = 0; i < appleSize; i++)
     apple_amount += apple[i];
   
-  shell_sort(capacity, capacitySize, sizeof(int), cmp_i, swap_i);
+  shell_sort(capacity, capacitySize, sizeof(int), cmp_i, swap_i); // sort boxes by greater capacity more proir
   for(int i = 0; i < capacitySize; i++)
   {
     printf("%d ", capacity[i]);

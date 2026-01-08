@@ -10,7 +10,7 @@
  */
 int* plusOne(int* digits, int digitsSize, int* returnSize) {
   
-  digits[digitsSize - 1]++;
+  digits[digitsSize - 1]++; // num + 1
   
   bool carry = false;
   for(int i = digitsSize - 1; i >= 0; i--)
@@ -20,11 +20,12 @@ int* plusOne(int* digits, int digitsSize, int* returnSize) {
       digits[i] += 1;
       carry = false;
     }
-    
+    // check if current digit need carry
     carry = (digits[i]/10);
     digits[i]%=10;
   }
   
+  // check if need extra memory for digits since carry
   *returnSize = digitsSize + carry;
   
   int* ans = (int*)malloc(sizeof(int) * *returnSize);

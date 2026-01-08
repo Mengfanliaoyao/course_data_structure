@@ -30,6 +30,7 @@ int maxSumDivThree(int* nums, int numsSize) {
     }       
     ans += nums[i];
   }
+  // for last digit
   if(!((ans+1)%3))   // 3k+1
   {
     if(least2[1]!=2147483647)

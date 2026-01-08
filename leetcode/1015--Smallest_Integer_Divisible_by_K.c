@@ -8,10 +8,10 @@ int smallestRepunitDivByK(int k)
   // by remainder thm. a = b*q+r -> s*a = s*b*q + (s*r)%q
   
   int i = 1, r = 0;
-  while(k%2&&i<50000)
+  while(k%2&&i<100000)
   {
-    r = ((r*10) + 1)%k;
-    if(!r)
+    r = ((r*10) + 1)%k; // update remainder
+    if(!r) // remainder == 0, find first num divisible by k
       return i;
     i++;
   }
